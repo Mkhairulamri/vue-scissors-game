@@ -1,17 +1,17 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+ <template>
+    <div class="navbar">
+        <ul class="nav-item">
+            <li><router-link to="/">Start Game</router-link></li>
+            <li><a href="/">home</a></li>
+            <li><a href="/rules">rules</a></li>
+            <li><router-link to="/rules">Rules</router-link></li>
+        </ul>
+    </div>
+    <router-view/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+export default{};
 </script>
 
 <style>
@@ -22,5 +22,32 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.navbar{
+  margin: 50px 100px 50px;
+  /* background-color:#2c3e50; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-item{
+  display: flex;
+  margin-left:-100px;
+}
+.nav-item li{
+  list-style: none;
+  display: block;
+  /* color: white; */
+  text-transform: uppercase;
+  font-style:initial;
+  text-decoration: none;
+}
+.nav-item li+li:before{
+  content: "|";
+  padding: 0;
+  margin: 0 40px;
+  position: relative;
+  top:-2px;
+  color:#2c3e50;
 }
 </style>
