@@ -1,53 +1,33 @@
  <template>
-    <div class="navbar">
-        <ul class="nav-item">
-            <li><router-link to="/">Start Game</router-link></li>
-            <li><a href="/">home</a></li>
-            <li><a href="/rules">rules</a></li>
-            <li><router-link to="/rules">Rules</router-link></li>
-        </ul>
+ <div class="container">
+  <div class="row mt-5">
+    <div class="col-5">
+      <GameSection></GameSection>
     </div>
-    <router-view/>
+    <div class="col-7" >
+      <GameRules></GameRules>
+    </div>
+  </div>
+ </div>
 </template>
 
 <script>
-export default{};
+import GameSection from "./components/Game"
+import GameRules from "./components/Rules" 
+
+export default{
+  name:'app',
+  components:{
+    GameSection,
+    GameRules
+  }
+};
+
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-.navbar{
-  margin: 50px 100px 50px;
-  /* background-color:#2c3e50; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.nav-item{
-  display: flex;
-  margin-left:-100px;
-}
-.nav-item li{
-  list-style: none;
-  display: block;
-  /* color: white; */
-  text-transform: uppercase;
-  font-style:initial;
-  text-decoration: none;
-}
-.nav-item li+li:before{
-  content: "|";
-  padding: 0;
-  margin: 0 40px;
-  position: relative;
-  top:-2px;
-  color:#2c3e50;
+body{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 </style>
+
